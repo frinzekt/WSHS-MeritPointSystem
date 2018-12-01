@@ -1,0 +1,220 @@
+body {
+	background-image: url('LoginBackground.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 1500px 1000px;
+	background-padding-top: 50px;
+}
+@-webkit-keyframes cf4FadeInOut {
+                                       0% {
+                                         opacity:1;
+                                       }
+                                       17% {
+                                         opacity:1;
+                                       }
+                                       25% {
+                                         opacity:0;
+                                       }
+                                       92% {
+                                         opacity:0;
+                                       }
+                                       100% {
+                                         opacity:1;
+                                       }
+                                       }
+
+                                       @-moz-keyframes cf4FadeInOut {
+                                       0% {
+                                         opacity:1;
+                                       }
+                                       17% {
+                                         opacity:1;
+                                       }
+                                       25% {
+                                         opacity:0;
+                                       }
+                                       92% {
+                                         opacity:0;
+                                       }
+                                       100% {
+                                         opacity:1;
+                                       }
+                                       }
+
+                                       @-o-keyframes cf4FadeInOut {
+                                       0% {
+                                         opacity:1;
+                                       }
+                                       17% {
+                                         opacity:1;
+                                       }
+                                       25% {
+                                         opacity:0;
+                                       }
+                                       92% {
+                                         opacity:0;
+                                       }
+                                       100% {
+                                         opacity:1;
+                                       }
+                                       }
+
+                                       @keyframes cf4FadeInOut {
+                                       0% {
+                                         opacity:1;
+                                       }
+                                       17% {
+                                         opacity:1;
+                                       }
+                                       25% {
+                                         opacity:0;
+                                       }
+                                       92% {
+                                         opacity:0;
+                                       }
+                                       100% {
+                                         opacity:1;
+                                       }
+                                       }
+
+                                       #cf4a {
+                                        position:fixed;
+                                        height:100%;
+                                        width: 100%;
+                                        margin:0;
+                                        top:0;
+                                        z-index:-1;
+                                       }
+                                       #cf4a img {
+                                        position:fixed;
+                                        left:0;     
+                                        height:100%;
+                                        width:100%;
+                                       }
+
+                                       #cf4a img {
+                                        -webkit-animation-name: cf4FadeInOut;
+                                        -webkit-animation-timing-function: ease-in-out;
+                                        -webkit-animation-iteration-count: infinite;
+                                        -webkit-animation-duration: 32s;
+
+                                        -moz-animation-name: cf4FadeInOut;
+                                        -moz-animation-timing-function: ease-in-out;
+                                        -moz-animation-iteration-count: infinite;
+                                        -moz-animation-duration: 32s;
+
+                                        -o-animation-name: cf4FadeInOut;
+                                        -o-animation-timing-function: ease-in-out;
+                                        -o-animation-iteration-count: infinite;
+                                        -o-animation-duration: 32s;
+
+                                        animation-name: cf4FadeInOut;
+                                        animation-timing-function: ease-in-out;
+                                        animation-iteration-count: infinite;
+                                        animation-duration: 32s;
+                                        
+
+                                       }
+                                       #cf4a img:nth-of-type(1) {
+                                        -webkit-animation-delay: 24s;
+                                        -moz-animation-delay: 24s;
+                                        -o-animation-delay: 24s;
+                                        animation-delay: 24s;
+                                       }
+                                       #cf4a img:nth-of-type(2) {
+                                        -webkit-animation-delay: 16s;
+                                        -moz-animation-delay: 16s;
+                                        -o-animation-delay: 16s;
+                                        animation-delay: 16s;
+                                       }
+                                       #cf4a img:nth-of-type(3) {
+                                        -webkit-animation-delay: 8s;
+                                        -moz-animation-delay: 8s;
+                                        -o-animation-delay: 8s;
+                                        animation-delay: 8s;
+                                       }
+                                       #cf4a img:nth-of-type(4) {
+                                        -webkit-animation-delay: 0;
+                                        -moz-animation-delay: 0;
+                                        -o-animation-delay: 0;
+                                        animation-delay: 0;
+                                       }
+									   
+								       h1 {
+								         font-family: sans-serif;
+								         width: 75%;
+								 		height:10%;
+								         top: -50px;
+								         font-size: 4vw;
+								         background-image: url('SchoolLogo.png');
+								         background-size: 17vw 8vw;
+								         background-position: -20px 30px;
+								         background-repeat: no-repeat;
+								         color: white;
+								         position: relative;
+								         padding: 40px 0px 30px 11%;
+								         left: 0;
+								         text-shadow: 10px 10px 20px black;
+								 		z-index: 1;
+								 		margin-bottom:-80px;
+								       }
+#frm{
+    border: solid gray 2px;
+    width: 100%;
+    border-radius: 5px;
+    margin: 200px auto;
+    background: white;
+    padding: 50px;
+}
+#btn{
+    color: #fff;
+    background: #337ab7;
+    padding: 5px;
+    margin-left: 10%;
+	display:block;
+	margin:auto;
+}
+button{
+	display:block;
+	margin:auto;
+	width: 400px;
+	height:30px;
+	background-color: rgba(220, 220, 220, 0.8);
+	border-color: transparent;
+	border-radius:5px;
+}
+input {
+	margin: 0 auto;
+	width: 400px;
+	border-radius : 10px;
+	height:30px;
+	display:block;
+	background-color: rgba(220, 220, 220, 0.5);
+	color: rgb(240,240,240);
+	padding-left:10px;
+	border-color: transparent;
+	
+}
+input::placeholder {
+	color:rgb(230,230,230);
+}
+@keyframes colourchange {
+    0%   {background-color: rgba(220, 220, 220, 0.8);}
+    100% {background-color: rgba(20, 20, 20, 0.8); color:rgb(240,240,240);}
+}
+@keyframes texthighlight {
+    0%   {background-color: rgba(220, 220, 220, 0.5);}
+    100% {background-color: rgba(20, 20, 20, 0.5);}
+}
+
+input:hover {
+	background-color: rgba(20,20,20, 0.6);
+	animation-name:texthighlight;
+	animation-duration:0.3s;
+}
+button:hover {
+	background-color: rgba(20,20,20, 0.8);
+	animation-name:colourchange;
+	animation-duration:0.4s;
+	color:rgb(240,240,240);
+}

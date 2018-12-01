@@ -1,0 +1,57 @@
+body.login{
+	background-image: url('LoginBackground.jpg');
+	background-repeat: no-repeat;
+}
+div.loginbox {
+	position: absolute;
+	left: -5%;
+	bottom: -10%;
+	padding-top: 10px;
+	background-color: #bfddff;
+	/*border: 2px outset black;*/
+	border-radius: 50%;
+	width: 600px;
+	height: 600px;
+}
+p.logintext {
+	position: absolute;
+	font-size: 32px;
+	font-family: "Arial Black", "Times New Roman", serif;
+	width: 75%;
+}
+.inputtext {
+	position: absolute;
+	font-size: 20px;
+	font-family: "Arial", "Times New Roman", serif;
+	font-weight: bold;
+	background-color: white;
+	border: none;
+	width: 75%; 
+	height: 5%;
+}
+.loginbutton {
+	position: absolute;
+	background-color: transparent;
+	border: 2px solid black;
+	color: black;
+	padding: 48px 48px;
+	border-radius: 50%;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	transition-duration: 1s;
+}
+.loginbutton:hover {
+	background-color: black;
+	color: #ffffff;
+	border: 2px solid white;
+}
+h1.title {
+	font-family: "Arial";
+	color: white;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+    margin: 0;
+}

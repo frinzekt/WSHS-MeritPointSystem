@@ -1,0 +1,684 @@
+﻿/* General Layout*/
+
+@-webkit-keyframes cf4FadeInOut {
+     0% {
+       opacity:1;
+     }
+     17% {
+       opacity:1;
+     }
+     25% {
+       opacity:0;
+     }
+     92% {
+       opacity:0;
+     }
+     100% {
+       opacity:1;
+     }
+     }
+
+     @-moz-keyframes cf4FadeInOut {
+     0% {
+       opacity:1;
+     }
+     17% {
+       opacity:1;
+     }
+     25% {
+       opacity:0;
+     }
+     92% {
+       opacity:0;
+     }
+     100% {
+       opacity:1;
+     }
+     }
+
+     @-o-keyframes cf4FadeInOut {
+     0% {
+       opacity:1;
+     }
+     17% {
+       opacity:1;
+     }
+     25% {
+       opacity:0;
+     }
+     92% {
+       opacity:0;
+     }
+     100% {
+       opacity:1;
+     }
+     }
+
+     @keyframes cf4FadeInOut {
+     0% {
+       opacity:1;
+     }
+     17% {
+       opacity:1;
+     }
+     25% {
+       opacity:0;
+     }
+     92% {
+       opacity:0;
+     }
+     100% {
+       opacity:1;
+     }
+     }
+
+     #cf4a {
+      position:fixed;
+      margin:0;
+      top:0;
+      z-index:-1;
+	  min-height:100%;
+	  min-width:100%;
+	  height:100%;
+	  width:auto;
+	  
+     }
+     #cf4a img {
+      position:fixed;
+      left:0;    
+	  min-height:100%;
+	  min-width:100%;
+	  width:auto; 
+     }
+
+     #cf4a img {
+      -webkit-animation-name: cf4FadeInOut;
+      -webkit-animation-timing-function: ease-in-out;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-duration: 32s;
+
+      -moz-animation-name: cf4FadeInOut;
+      -moz-animation-timing-function: ease-in-out;
+      -moz-animation-iteration-count: infinite;
+      -moz-animation-duration: 32s;
+
+      -o-animation-name: cf4FadeInOut;
+      -o-animation-timing-function: ease-in-out;
+      -o-animation-iteration-count: infinite;
+      -o-animation-duration: 32s;
+
+      animation-name: cf4FadeInOut;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-duration: 32s;
+      
+
+     }
+     #cf4a img:nth-of-type(1) {
+      -webkit-animation-delay: 24s;
+      -moz-animation-delay: 24s;
+      -o-animation-delay: 24s;
+      animation-delay: 24s;
+     }
+     #cf4a img:nth-of-type(2) {
+      -webkit-animation-delay: 16s;
+      -moz-animation-delay: 16s;
+      -o-animation-delay: 16s;
+      animation-delay: 16s;
+     }
+     #cf4a img:nth-of-type(3) {
+      -webkit-animation-delay: 8s;
+      -moz-animation-delay: 8s;
+      -o-animation-delay: 8s;
+      animation-delay: 8s;
+     }
+     #cf4a img:nth-of-type(4) {
+      -webkit-animation-delay: 0;
+      -moz-animation-delay: 0;
+      -o-animation-delay: 0;
+      animation-delay: 0;
+     }
+/* LoginPage.php*/
+#teacherInput {
+  background-image: url('SearchIcon.png');
+  background-position: 5px 10px;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  font-size: 2vw;
+  width:100%;
+  padding: 12px 0px 12px 50px;
+  border: 1px solid #ddd;
+  margin: auto;
+}
+
+#teacherUL {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  font-family: sans-serif;
+  height: 70%;
+  overflow: scroll;
+  background-color: white;
+}
+
+#teacherUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#teacherUL li a.header {
+  background-color: #e2e2e2;
+  cursor: default;
+}
+
+#teacherUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+
+
+#devbutton {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 15%;
+	min-width: 100px;
+	background-color: #f1f1f1;
+	font-family: sans-serif;
+	height: 45px;
+	color: black;
+	left: 10px;
+	font-size: 20px;
+}
+/* MainPage.php*/
+
+#addFieldButton {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 16%;
+	top: 810px;
+	background-color: #f1f1f1;
+	position: absolute;
+	font-family: sans-serif;
+	height: 35px;
+	color: black;
+	left: 10px;
+	font-size: 18px;
+}
+
+#addFieldText {
+  	width: 14.4%;
+  	font-size: 16px;
+  	padding: 6px 10px 6px 10px;
+  	border: 1px solid #ddd;
+  	margin-bottom: 12px;
+  	margin-top: 18px;
+  	left: 10px;
+	top: 830px;
+	position: absolute;
+}
+
+#addDepartmentButton {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 16%;
+	top: 890px;
+	background-color: #f1f1f1;
+	position: absolute;
+	font-family: sans-serif;
+	height: 35px;
+	color: black;
+	left: 10px;
+	font-size: 18px;
+}
+
+#addDepartmentText {
+  	width: 14.4%;
+  	font-size: 16px;
+  	padding: 6px 10px 6px 10px;
+  	border: 1px solid #ddd;
+  	margin-bottom: 12px;
+  	margin-top: 18px;
+  	left: 10px;
+	top: 910px;
+	position: absolute;
+}
+
+#submitButton {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 16%;
+	background-color: #f1f1f1;
+	top: 640px;
+	position: absolute;
+	font-family: sans-serif;
+	height: 45px;
+	color: black;
+	left: 10px;
+	font-size: 20px;
+}
+
+#confirmButton {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 16%;
+	background-color: #f1f1f1;
+	top: 730px;
+	position: absolute;
+	font-family: sans-serif;
+	height: 45px;
+	color: black;
+	left: 10px;
+	font-size: 20px;
+}
+
+#studentInput {
+  	background-image: url('SearchIcon.png');
+  	background-position: 5px 5px;
+  	background-repeat: no-repeat;
+  	background-size: 30px 30px;
+  	width: 76.5%;
+  	font-size: 16px;
+  	padding: 12px 20px 12px 40px;
+  	border: 1px solid #ddd;
+  	margin-bottom: 12px;
+  	margin-top: 140px;
+  	margin-left: 250px;
+}
+
+#studentUL {
+    margin-left: 250px;
+    list-style-type: none;
+    padding: 0px 11px 0px 0px;
+    width: 80%;
+    font-family: sans-serif;
+    height: 480px;
+    overflow: scroll;
+    background-color: white;
+    display: inline-block;
+}
+
+input:checked + label {
+    padding: 12px;
+    background-color: #aaf7e9
+}
+label:hover + input:checked{
+    padding: 12px;
+    background-color: #aaf7e9
+
+}
+
+label {
+    padding: 12px;
+   	background-color: #f6f6f6;
+	font-size: 18px;
+}
+
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#studentUL p a {
+  	border: 1px solid #ddd;
+  	margin-top: -1px;
+  	background-color: #f6f6f6;
+  	text-decoration: none;
+  	font-size: 18px;
+  	color: black;
+  	display: block;
+	position:relative;
+}
+
+#studentUL p a.header {
+  	background-color: #e2e2e2;
+  	cursor: default;
+}
+
+#studentUL p a:hover:not(.header) {
+  	background-color: #eee;
+}
+
+#studentUL p label:hover:not(.header) + input:not(:checked){
+  	background-color: #eee;
+}
+
+#extraInput {
+  	background-image: url('SearchIcon.png');
+  	background-position: 5px 5px;
+  	background-repeat: no-repeat;
+  	background-size: 30px 30px;
+  	width: 76.5%;
+  	font-size: 16px;
+  	padding: 12px 20px 12px 40px;
+  	border: 1px solid #ddd;
+  	margin-bottom: 0px;
+  	margin-top: 18px;
+  	margin-left: 250px;
+}
+
+#extraUL {
+  	list-style-type: none;
+  	padding: 0px 11px 0px 0px;
+  	margin: 0px 0px 15px 250px;
+  	width: 80%;
+  	font-family: sans-serif;
+  	height: 350px;
+  	overflow: scroll;
+  	background-color: white;
+}
+
+input:checked + label {
+    padding: 12px;
+    background-color: #aaf7e9
+}
+label:hover + input:checked{
+    padding: 12px;
+    background-color: #aaf7e9
+
+}
+
+label {
+    padding: 12px;
+   	background-color: #f6f6f6;
+	font-size: 18px;
+}
+
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#extraUL p a {
+  	border: 1px solid #ddd;
+  	margin-top: -1px;
+  	background-color: #f6f6f6;
+  	text-decoration: none;
+  	font-size: 18px;
+  	color: black;
+  	display: block
+}
+
+#extraUL p a.header {
+  	background-color: #e2e2e2;
+  	cursor: default;
+}
+
+#extraUL p a:hover:not(.header) {
+  	background-color: #eee;
+}
+
+#extraUL p label:hover:not(.header) + input:not(:checked){
+  	background-color: #eee;
+}
+
+#studentOTW_UL {
+  	list-style-type: none;
+  	padding: 0px 11px 0px 0px;
+  	margin: 0px 0px 15px 250px;
+  	width: 80%;
+  	font-family: sans-serif;
+  	max-height: 525px;
+  	overflow: scroll;
+  	background-color: white;
+}
+
+#studentOTW_UL p a {
+  	border: 1px solid #ddd;
+  	margin-top: -1px;
+  	background-color: #f6f6f6;
+  	text-decoration: none;
+  	color: black;
+  	display: block
+}
+
+#studentOTW_UL p a.header {
+  	background-color: #e2e2e2;
+  	cursor: default;
+	font-size: 20px;
+}
+
+#studentOTW_UL p a:hover:not(.header) {
+  	background-color: #eee;
+}
+#studentOTW_UL p label:hover:not(.header) + input:not(:checked){
+  	background-color: #eee;
+}
+
+#classMenu {
+	list-style-type: none;
+	margin: 150px 0px 0px 0px;
+	padding: 0;
+	width: 16%;
+	top: 205px;
+	font-family: sans-serif;
+	max-height: 220px;
+	overflow: scroll;
+    left: 10px;
+	position: absolute;
+	white-space: nowrap;
+}
+
+#classMenu li a{
+	display: block;
+	color: #000;
+	padding: 8px 16px;
+	text-decoration: none;
+	font-size: 15px;
+	height:25px;
+	background-color: white;
+}
+
+#classMenu li a.header{
+	display: block;
+	color: black;
+	background-color: #D3D3D3;
+	padding: 12px 16px 6px 16px;
+	text-decoration: none;
+	cursor: default;
+	font-size: 18px;
+	height: 30px;
+}
+
+#classMenu li a:hover:not(.header) {
+	background-color: #555;
+	color: white;
+}
+
+#reasonMenu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 16%;
+	background-color: white;
+	top: 438px;
+	position: fixed;
+	font-family: sans-serif;
+	max-height: 220px;
+	overflow: scroll;
+    left: 10px;
+	position: absolute;
+	white-space: nowrap;
+}
+
+#reasonMenu li a{
+	display: block;
+	color: #000;
+	padding: 8px 16px;
+	text-decoration: none;
+	font-size: 15px;
+	height:25px;
+}
+
+#reasonMenu li a.header{
+	display: block;
+	color: black;
+	background-color: #D3D3D3;
+	padding: 12px 16px 6px 16px;
+	text-decoration: none;
+	cursor: default;
+	font-size: 18px;
+	height: 30px;
+}
+
+.dropbtn {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #f1f1f1;
+	position: absolute;
+	font-family: sans-serif;
+	color: black;
+	font-size: 20px;
+	height: 100%;
+}
+
+.dropdown {
+	margin: 0;
+	padding: 0;
+	width: 16%;
+	background-color: #f1f1f1;
+	top: 702px;
+	position: absolute;
+	font-family: sans-serif;
+	height: 45px;
+	color: black;
+	left: 10px;
+	font-size: 20px;
+}
+
+.dropdown-content {
+    display: none;
+	top: 45px;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #f1f1f1;
+}
+
+h1 {
+	font-family: sans-serif;
+	width: 75%;
+	top: -60px;
+	height:100px;
+	font-size: 4vw;
+	background-image: url('SchoolLogo.png');
+	background-size: 15% 50%;
+	background-position: 0px 30px;
+	background-repeat: no-repeat;
+	color: white;
+	padding: 50px 0px 0px 15%;
+	left: 0px;;
+	text-shadow: 10px 10px 20px black;
+	white-space: nowrap;
+	margin-bottom:0px;
+}
+
+/* Developer.php -------------------------------------------------------------------------------------------------*/
+
+/*h1 {
+	font-family: sans-serif;
+    width: 80%;
+    top: -40px;
+    font-size: 4vw;
+    background-image: url('SchoolLogo.png');
+    background-size: 17vw 8vw;
+    background-position: -20px 20px;
+    background-repeat: no-repeat;
+    color: white;
+    position: absolute;
+    padding: 40px 0px 30px 11%;
+    left: 0;
+    text-shadow: 10px 10px 20px black;
+}*/
+
+fieldset{border: 1px solid lightgrey}
+                                          
+#teacherInput_DEV {
+	background-image: url('SearchIcon.png');
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    width: 75.5%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-top: 140px;
+    margin-left: 180px;
+    position:relative;
+}
+
+#teacherUL_DEV {
+	list-style-type: none;
+    padding: 0;
+    margin: 0px 0px 0px 180px;
+    width: 80%;
+    font-family: sans-serif;
+    height: 450px;
+    overflow: scroll;
+    position: relative;
+    top: -180px;
+}
+
+#teacherUL_DEV p a {
+	border: 1px solid #ddd;
+	margin-top: -1px;
+	background-color: #f6f6f6;                              
+	text-decoration: none;
+	font-size: 18px;
+	color: black;
+	display: block 
+}
+
+#teacherUL_DEV p.header {
+	background-color: #e2e2e2;
+	cursor: default;
+}
+
+#teacherUL_DEV p a:hover:not(.header) {
+	background-color: #eee;
+}
+                                       
+/*LoginDeveloper.php*/
+#frm{
+    border: solid gray 2px;
+    width: 20%;
+    border-radius: 5px;
+    margin: 200px auto;
+    background: white;
+    padding: 50px;
+}
+#btn{
+    color: #fff;
+    background: #337ab7;
+    padding: 5px;
+    margin-left: 10%
+}
+

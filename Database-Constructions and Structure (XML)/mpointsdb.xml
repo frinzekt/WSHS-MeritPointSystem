@@ -1,0 +1,1423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.3
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1:3306
+- Generation Time: Dec 01, 2018 at 04:47 PM
+- Server version: 5.7.23
+- PHP Version: 7.2.10
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="mpointsdb" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="administrator">
+                CREATE TABLE `administrator` (
+                  `Username` varchar(15) NOT NULL,
+                  `Password` varchar(100) NOT NULL,
+                  PRIMARY KEY (`Username`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="extracurricular">
+                CREATE TABLE `extracurricular` (
+                  `extraIndex` int(3) NOT NULL AUTO_INCREMENT,
+                  `Department` varchar(100) DEFAULT NULL,
+                  `Field` varchar(100) DEFAULT NULL,
+                  PRIMARY KEY (`extraIndex`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="extradepartment">
+                CREATE TABLE `extradepartment` (
+                  `departmentIndex` int(3) NOT NULL AUTO_INCREMENT,
+                  `Department` varchar(100) NOT NULL,
+                  PRIMARY KEY (`departmentIndex`),
+                  UNIQUE KEY `Department` (`Department`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="permanent">
+                CREATE TABLE `permanent` (
+                  `StudentEmail` varchar(100) NOT NULL,
+                  `Reason` varchar(1000) DEFAULT NULL,
+                  `Year` varchar(100) DEFAULT NULL,
+                  PRIMARY KEY (`StudentEmail`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="settings">
+                CREATE TABLE `settings` (
+                  `MeritCap` int(3) NOT NULL,
+                  `NumBound` int(3) NOT NULL,
+                  `DefMsg0` varchar(100) NOT NULL,
+                  `DefMsgBelow` varchar(100) NOT NULL,
+                  `DefMsgAbove` varchar(100) NOT NULL,
+                  `topStudentsCap` int(3) NOT NULL DEFAULT '25',
+                  `StudentFile` varchar(100) NOT NULL,
+                  PRIMARY KEY (`StudentFile`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="student">
+                CREATE TABLE `student` (
+                  `UserIndex` int(5) NOT NULL AUTO_INCREMENT,
+                  `FName` varchar(100) NOT NULL,
+                  `LName` varchar(100) NOT NULL,
+                  `Year` int(1) NOT NULL DEFAULT '7',
+                  `Email` varchar(100) NOT NULL,
+                  `Class1` varchar(15) DEFAULT NULL,
+                  `Class2` varchar(15) DEFAULT NULL,
+                  `Class3` varchar(15) DEFAULT NULL,
+                  `Class4` varchar(15) DEFAULT NULL,
+                  `Class5` varchar(15) DEFAULT NULL,
+                  `Class6` varchar(15) DEFAULT NULL,
+                  `Class7` varchar(15) DEFAULT NULL,
+                  `Class8` varchar(15) DEFAULT NULL,
+                  `Class9` varchar(15) DEFAULT NULL,
+                  `Class10` varchar(15) DEFAULT NULL,
+                  `Class11` varchar(15) DEFAULT NULL,
+                  `Class12` varchar(15) DEFAULT NULL,
+                  `Teacher` varchar(1000) DEFAULT NULL,
+                  `Merit` varchar(1000) DEFAULT NULL,
+                  `weeklyMerits` int(3) NOT NULL DEFAULT '0',
+                  `totalMerits` int(3) NOT NULL DEFAULT '0',
+                  `ObtainedSOTW` int(1) NOT NULL DEFAULT '0',
+                  `ObtainedMerit` int(1) NOT NULL DEFAULT '0',
+                  `ObtainedExcellence` int(1) NOT NULL DEFAULT '0',
+                  `ObtainedOutstanding` int(1) NOT NULL DEFAULT '0',
+                  PRIMARY KEY (`UserIndex`),
+                  UNIQUE KEY `Email` (`Email`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="teacher">
+                CREATE TABLE `teacher` (
+                  `UserIndex` int(5) NOT NULL AUTO_INCREMENT,
+                  `FName` varchar(100) DEFAULT NULL,
+                  `LName` varchar(100) DEFAULT NULL,
+                  `Title` varchar(100) DEFAULT NULL,
+                  `Status` int(1) NOT NULL DEFAULT '1',
+                  `Email` varchar(100) NOT NULL,
+                  `mPoints` int(3) NOT NULL DEFAULT '0',
+                  `Class1` varchar(15) DEFAULT NULL,
+                  `Class2` varchar(15) DEFAULT NULL,
+                  `Class3` varchar(15) DEFAULT NULL,
+                  `Class4` varchar(15) DEFAULT NULL,
+                  `Class5` varchar(15) DEFAULT NULL,
+                  `Class6` varchar(15) DEFAULT NULL,
+                  `Class7` varchar(15) DEFAULT NULL,
+                  `Class8` varchar(15) DEFAULT NULL,
+                  PRIMARY KEY (`UserIndex`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'mpointsdb'
+    -->
+    <database name="mpointsdb">
+        <!-- Table administrator -->
+        <table name="administrator">
+            <column name="Username">admin</column>
+            <column name="Password">admin</column>
+        </table>
+        <!-- Table extracurricular -->
+        <table name="extracurricular">
+            <column name="extraIndex">1</column>
+            <column name="Department">English</column>
+            <column name="Field">Debating Club (WA Debating League)</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">2</column>
+            <column name="Department">English</column>
+            <column name="Field">Philosophy Club</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">3</column>
+            <column name="Department">English</column>
+            <column name="Field">Gavel Club (Speech)</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">4</column>
+            <column name="Department">English</column>
+            <column name="Field">Young Writers Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">5</column>
+            <column name="Department">English</column>
+            <column name="Field">Tim Winton Prose Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">6</column>
+            <column name="Department">English</column>
+            <column name="Field">Primo Lux Poetry Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">7</column>
+            <column name="Department">Languages</column>
+            <column name="Field">WA Japanese Speech Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">8</column>
+            <column name="Department">Languages</column>
+            <column name="Field">ACER Language Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">9</column>
+            <column name="Department">Languages</column>
+            <column name="Field">Dante Alighieri Italian Examination</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">10</column>
+            <column name="Department">Languages</column>
+            <column name="Field">Alliance Francaise Examination</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">11</column>
+            <column name="Department">Languages</column>
+            <column name="Field">WAATI Exams</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">12</column>
+            <column name="Department">Languages</column>
+            <column name="Field">Hyogo Japanese Exchange</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">13</column>
+            <column name="Department">Languages</column>
+            <column name="Field">Toulouse French Exchange</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">14</column>
+            <column name="Department">Languages</column>
+            <column name="Field">Intercultural Italian Exchange</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">16</column>
+            <column name="Department">Mathematics</column>
+            <column name="Field">ICAS Mathematics Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">17</column>
+            <column name="Department">Mathematics</column>
+            <column name="Field">Australian Mathematics Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">18</column>
+            <column name="Department">Mathematics</column>
+            <column name="Field">State Mathematics Camp</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">19</column>
+            <column name="Department">Mathematics</column>
+            <column name="Field">Mathematical Olympiad</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">20</column>
+            <column name="Department">Mathematics</column>
+            <column name="Field">Have-Sum-Fun Mathematics Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">21</column>
+            <column name="Department">Mathematics</column>
+            <column name="Field">Australian Informatics Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">22</column>
+            <column name="Department">Science</column>
+            <column name="Field">Rio Tinto Big Science Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">23</column>
+            <column name="Department">Science</column>
+            <column name="Field">BHP Billiton Science Awards</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">24</column>
+            <column name="Department">Science</column>
+            <column name="Field">STAWA Science Talent Search</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">25</column>
+            <column name="Department">Science</column>
+            <column name="Field">Young Inventors Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">26</column>
+            <column name="Department">Science</column>
+            <column name="Field">UNSW ICAS Science Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">27</column>
+            <column name="Department">Science</column>
+            <column name="Field">Science Engineering Challenge</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">28</column>
+            <column name="Department">Science</column>
+            <column name="Field">Murdoch STAR Quiz</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">29</column>
+            <column name="Department">Science</column>
+            <column name="Field">WA Astronomy Cup</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">30</column>
+            <column name="Department">Science</column>
+            <column name="Field">eV Challenge</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">31</column>
+            <column name="Department">Science</column>
+            <column name="Field">Solar Car Challenge</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">32</column>
+            <column name="Department">Science</column>
+            <column name="Field">World Solar Challenge</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">33</column>
+            <column name="Department">Science</column>
+            <column name="Field">Value Adding Quest</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">34</column>
+            <column name="Department">Science</column>
+            <column name="Field">National Youth Science Forum</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">35</column>
+            <column name="Department">Science</column>
+            <column name="Field">Siemens Science Summer School</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">36</column>
+            <column name="Department">Science</column>
+            <column name="Field">RACI Chemistry Quiz</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">37</column>
+            <column name="Department">Science</column>
+            <column name="Field">WA Titration Stakes</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">38</column>
+            <column name="Department">Science</column>
+            <column name="Field">Professor Harry Messel</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">39</column>
+            <column name="Department">Science</column>
+            <column name="Field">International Science School</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">40</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">National Schools Basketball Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">41</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Basketball Boys</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">42</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Basketball Girls</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">43</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">AIS Links</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">44</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">A Division Swimming Carnival</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">45</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">B Division Swimming Carnival</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">46</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">B Division Athletics Carnival</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">47</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Soccer Boys</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">48</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Soccer Girls</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">49</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Badminton</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">50</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">AFL Girls</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">51</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">AFL Boys</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">52</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Cricket</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">53</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Netball Girls</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">54</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Triathlon</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">55</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Cross Country</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">56</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Rugby Union</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">57</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Baseball Open</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">58</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Touch Football</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">59</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Volleyball</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">60</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Golf</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">61</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Hockey Open</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">62</column>
+            <column name="Department">Physical Education</column>
+            <column name="Field">Squash</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">65</column>
+            <column name="Department">Society and Environment</column>
+            <column name="Field">Geography Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">66</column>
+            <column name="Department">Society and Environment</column>
+            <column name="Field">National History Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">67</column>
+            <column name="Department">Society and Environment</column>
+            <column name="Field">Stock Market Game</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">68</column>
+            <column name="Department">Society and Environment</column>
+            <column name="Field">Economics Association</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">69</column>
+            <column name="Department">Society and Environment</column>
+            <column name="Field">Mock Trial</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">70</column>
+            <column name="Department">Society and Environment</column>
+            <column name="Field">ANZAC Tour Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">71</column>
+            <column name="Department">Society and Environment</column>
+            <column name="Field">Youth Parliament</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">72</column>
+            <column name="Department">Technology and Enterprise</column>
+            <column name="Field">Catering at Events</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">73</column>
+            <column name="Department">Technology and Enterprise</column>
+            <column name="Field">Willo Cafe</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">74</column>
+            <column name="Department">Technology and Enterprise</column>
+            <column name="Field">ICAS Computing Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">75</column>
+            <column name="Department">Technology and Enterprise</column>
+            <column name="Field">Graphic Design Competitions</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">76</column>
+            <column name="Department">Technology and Enterprise</column>
+            <column name="Field">Animation for Drama</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">77</column>
+            <column name="Department">Technology and Enterprise</column>
+            <column name="Field">Set Construction For Whole</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">78</column>
+            <column name="Department">Technology and Enterprise</column>
+            <column name="Field">SCITECH Animation Competition</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">79</column>
+            <column name="Department">Technology and Enterprise</column>
+            <column name="Field">CPA Australia Plan Your Own Enterprise</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">80</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">Jazz Band</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">81</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">Junior Band</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">82</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">Senior Band</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">83</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">Choir</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">84</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">String Ensemble</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">85</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">Guitar Ensemble</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">86</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">Choir Festival</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">87</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">Band Festival</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">88</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">Dance Festival</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">89</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">School Production</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">90</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">Rock Eisteddfod</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">91</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">Media Club</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">92</column>
+            <column name="Department">The Arts</column>
+            <column name="Field">Drama Club</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">93</column>
+            <column name="Department">Student Services</column>
+            <column name="Field">Peer Support Program</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">94</column>
+            <column name="Department">Student Services</column>
+            <column name="Field">Relay for Life</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">95</column>
+            <column name="Department">Student Services</column>
+            <column name="Field">Fundraising for Charities</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">96</column>
+            <column name="Department">Student Services</column>
+            <column name="Field">Graduation Performance</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">97</column>
+            <column name="Department">Student Services</column>
+            <column name="Field">Student Council</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">98</column>
+            <column name="Department">Other</column>
+            <column name="Field">NAIDOC Day</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">99</column>
+            <column name="Department">Other</column>
+            <column name="Field">Duke of Edinburgh Award</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">100</column>
+            <column name="Department">Other</column>
+            <column name="Field">ANZAC Ceremony</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">101</column>
+            <column name="Department">Other</column>
+            <column name="Field">Remembrance Day</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">102</column>
+            <column name="Department">Other</column>
+            <column name="Field">World Women's Day</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">103</column>
+            <column name="Department">Other</column>
+            <column name="Field">Yearbook Committee</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">104</column>
+            <column name="Department">Other</column>
+            <column name="Field">Outspan</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">105</column>
+            <column name="Department">Other</column>
+            <column name="Field">Multicultural Week</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">106</column>
+            <column name="Department">Other</column>
+            <column name="Field">Harmony Day</column>
+        </table>
+        <table name="extracurricular">
+            <column name="extraIndex">107</column>
+            <column name="Department">Other</column>
+            <column name="Field">World's Greatest Shave</column>
+        </table>
+        <!-- Table extradepartment -->
+        <table name="extradepartment">
+            <column name="departmentIndex">1</column>
+            <column name="Department">English</column>
+        </table>
+        <table name="extradepartment">
+            <column name="departmentIndex">2</column>
+            <column name="Department">Languages</column>
+        </table>
+        <table name="extradepartment">
+            <column name="departmentIndex">3</column>
+            <column name="Department">Mathematics</column>
+        </table>
+        <table name="extradepartment">
+            <column name="departmentIndex">4</column>
+            <column name="Department">Other</column>
+        </table>
+        <table name="extradepartment">
+            <column name="departmentIndex">9</column>
+            <column name="Department">Physical Education</column>
+        </table>
+        <table name="extradepartment">
+            <column name="departmentIndex">7</column>
+            <column name="Department">Science</column>
+        </table>
+        <table name="extradepartment">
+            <column name="departmentIndex">6</column>
+            <column name="Department">Society and Environment</column>
+        </table>
+        <table name="extradepartment">
+            <column name="departmentIndex">5</column>
+            <column name="Department">Student Services</column>
+        </table>
+        <table name="extradepartment">
+            <column name="departmentIndex">8</column>
+            <column name="Department">Technology and Enterprise</column>
+        </table>
+        <table name="extradepartment">
+            <column name="departmentIndex">10</column>
+            <column name="Department">The Arts</column>
+        </table>
+        <!-- Table permanent -->
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant10@education.wa.edu.au</column>
+            <column name="Reason">NULL</column>
+            <column name="Year">NULL</column>
+        </table>
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant11@education.wa.edu.au</column>
+            <column name="Reason">NULL</column>
+            <column name="Year">NULL</column>
+        </table>
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant12@education.wa.edu.au</column>
+            <column name="Reason">3,,2,</column>
+            <column name="Year">0,0,0,</column>
+        </table>
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant1@education.wa.edu.au</column>
+            <column name="Reason">NULL</column>
+            <column name="Year">NULL</column>
+        </table>
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant2@education.wa.edu.au</column>
+            <column name="Reason">3,</column>
+            <column name="Year">3,</column>
+        </table>
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant3@education.wa.edu.au</column>
+            <column name="Reason">3,,2,</column>
+            <column name="Year">7,7,7,</column>
+        </table>
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant4@education.wa.edu.au</column>
+            <column name="Reason">NULL</column>
+            <column name="Year">NULL</column>
+        </table>
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant5@education.wa.edu.au</column>
+            <column name="Reason">NULL</column>
+            <column name="Year">NULL</column>
+        </table>
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant6@education.wa.edu.au</column>
+            <column name="Reason">NULL</column>
+            <column name="Year">NULL</column>
+        </table>
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant7@education.wa.edu.au</column>
+            <column name="Reason">NULL</column>
+            <column name="Year">NULL</column>
+        </table>
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant8@education.wa.edu.au</column>
+            <column name="Reason">NULL</column>
+            <column name="Year">NULL</column>
+        </table>
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant9@education.wa.edu.au</column>
+            <column name="Reason">NULL</column>
+            <column name="Year">NULL</column>
+        </table>
+        <table name="permanent">
+            <column name="StudentEmail">roshan.prashant@education.wa.edu.au</column>
+            <column name="Reason">NULL</column>
+            <column name="Year">NULL</column>
+        </table>
+        <!-- Table settings -->
+        <table name="settings">
+            <column name="MeritCap">100</column>
+            <column name="NumBound">50</column>
+            <column name="DefMsg0">None</column>
+            <column name="DefMsgBelow">HiHi</column>
+            <column name="DefMsgAbove">HiHi2</column>
+            <column name="topStudentsCap">2</column>
+            <column name="StudentFile">/Applications/XAMPP/xamppfiles/htdocs/SQLTest2/filename.csv</column>
+        </table>
+        <!-- Table student -->
+        <table name="student">
+            <column name="UserIndex">1</column>
+            <column name="FName">Roshan</column>
+            <column name="LName">Prashant</column>
+            <column name="Year">5</column>
+            <column name="Email">roshan.prashant@education.wa.edu.au1</column>
+            <column name="Class1"></column>
+            <column name="Class2">10SCG_1</column>
+            <column name="Class3">10MTG_1</column>
+            <column name="Class4">10ENG_1</column>
+            <column name="Class5">10PE_4</column>
+            <column name="Class6">10HE_4</column>
+            <column name="Class7">10DD_1</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">NULL</column>
+            <column name="Merit">NULL</column>
+            <column name="weeklyMerits">0</column>
+            <column name="totalMerits">0</column>
+            <column name="ObtainedSOTW">1</column>
+            <column name="ObtainedMerit">1</column>
+            <column name="ObtainedExcellence">1</column>
+            <column name="ObtainedOutstanding">1</column>
+        </table>
+        <table name="student">
+            <column name="UserIndex">2</column>
+            <column name="FName">Avinash</column>
+            <column name="LName">Rajandra</column>
+            <column name="Year">8</column>
+            <column name="Email">roshan.prashant1@education.wa.edu.au2</column>
+            <column name="Class1">10HSSG_2</column>
+            <column name="Class2">10SCG_2</column>
+            <column name="Class3">10MTG_2</column>
+            <column name="Class4">10ENG_2</column>
+            <column name="Class5">10PE_5</column>
+            <column name="Class6">10HE_5</column>
+            <column name="Class7">10DD_2</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">NULL</column>
+            <column name="Merit">NULL</column>
+            <column name="weeklyMerits">0</column>
+            <column name="totalMerits">0</column>
+            <column name="ObtainedSOTW">1</column>
+            <column name="ObtainedMerit">0</column>
+            <column name="ObtainedExcellence">0</column>
+            <column name="ObtainedOutstanding">0</column>
+        </table>
+        <table name="student">
+            <column name="UserIndex">3</column>
+            <column name="FName">Kevin</column>
+            <column name="LName">Choo</column>
+            <column name="Year">3</column>
+            <column name="Email">roshan.prashant2@education.wa.edu.au3</column>
+            <column name="Class1">10HSSG_3</column>
+            <column name="Class2">10SCG_3</column>
+            <column name="Class3">10MTG_3</column>
+            <column name="Class4">10ENG_3</column>
+            <column name="Class5">10PE_6</column>
+            <column name="Class6">10HE_6</column>
+            <column name="Class7">10DD_3</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">NULL</column>
+            <column name="Merit">NULL</column>
+            <column name="weeklyMerits">0</column>
+            <column name="totalMerits">0</column>
+            <column name="ObtainedSOTW">1</column>
+            <column name="ObtainedMerit">1</column>
+            <column name="ObtainedExcellence">0</column>
+            <column name="ObtainedOutstanding">0</column>
+        </table>
+        <table name="student">
+            <column name="UserIndex">4</column>
+            <column name="FName">Jayden</column>
+            <column name="LName">Choo</column>
+            <column name="Year">7</column>
+            <column name="Email">roshan.prashant3@education.wa.edu.au4</column>
+            <column name="Class1">10HSSG_4</column>
+            <column name="Class2">10SCG_4</column>
+            <column name="Class3">10MTG_4</column>
+            <column name="Class4">10ENG_4</column>
+            <column name="Class5">10PE_7</column>
+            <column name="Class6">10HE_7</column>
+            <column name="Class7">10DD_4</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">11,</column>
+            <column name="Merit">3,</column>
+            <column name="weeklyMerits">3</column>
+            <column name="totalMerits">3</column>
+            <column name="ObtainedSOTW">1</column>
+            <column name="ObtainedMerit">1</column>
+            <column name="ObtainedExcellence">1</column>
+            <column name="ObtainedOutstanding">0</column>
+        </table>
+        <table name="student">
+            <column name="UserIndex">6</column>
+            <column name="FName">Sohail</column>
+            <column name="LName">Kharrazi</column>
+            <column name="Year">9</column>
+            <column name="Email">roshan.prashant5@education.wa.edu.au6</column>
+            <column name="Class1">10CS_1</column>
+            <column name="Class2">10SCG_6</column>
+            <column name="Class3">10MTG_6</column>
+            <column name="Class4">10ENG_6</column>
+            <column name="Class5">10PE_9</column>
+            <column name="Class6">10HE_9</column>
+            <column name="Class7">10DD_6</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">NULL</column>
+            <column name="Merit">NULL</column>
+            <column name="weeklyMerits">0</column>
+            <column name="totalMerits">0</column>
+            <column name="ObtainedSOTW">1</column>
+            <column name="ObtainedMerit">0</column>
+            <column name="ObtainedExcellence">0</column>
+            <column name="ObtainedOutstanding">0</column>
+        </table>
+        <table name="student">
+            <column name="UserIndex">7</column>
+            <column name="FName">Tristan</column>
+            <column name="LName">Sheets</column>
+            <column name="Year">7</column>
+            <column name="Email">roshan.prashant6@education.wa.edu.au7</column>
+            <column name="Class1">10HSSG_7</column>
+            <column name="Class2">10SCG_7</column>
+            <column name="Class3">10MTG_7</column>
+            <column name="Class4">10ENG_7</column>
+            <column name="Class5">10PE_10</column>
+            <column name="Class6">10HE_10</column>
+            <column name="Class7">10DD_7</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">NULL</column>
+            <column name="Merit">NULL</column>
+            <column name="weeklyMerits">0</column>
+            <column name="totalMerits">0</column>
+            <column name="ObtainedSOTW">1</column>
+            <column name="ObtainedMerit">0</column>
+            <column name="ObtainedExcellence">0</column>
+            <column name="ObtainedOutstanding">0</column>
+        </table>
+        <table name="student">
+            <column name="UserIndex">8</column>
+            <column name="FName">Rabiya</column>
+            <column name="LName">Raza</column>
+            <column name="Year">8</column>
+            <column name="Email">roshan.prashant7@education.wa.edu.au8</column>
+            <column name="Class1">10HSSG_8</column>
+            <column name="Class2">10SCG_8</column>
+            <column name="Class3">10MTG_8</column>
+            <column name="Class4">10ENG_8</column>
+            <column name="Class5">10PE_11</column>
+            <column name="Class6">10HE_11</column>
+            <column name="Class7">10DD_8</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">NULL</column>
+            <column name="Merit">NULL</column>
+            <column name="weeklyMerits">0</column>
+            <column name="totalMerits">0</column>
+            <column name="ObtainedSOTW">1</column>
+            <column name="ObtainedMerit">0</column>
+            <column name="ObtainedExcellence">0</column>
+            <column name="ObtainedOutstanding">0</column>
+        </table>
+        <table name="student">
+            <column name="UserIndex">9</column>
+            <column name="FName">Elisya</column>
+            <column name="LName">Razif</column>
+            <column name="Year">9</column>
+            <column name="Email">roshan.prashant8@education.wa.edu.au9</column>
+            <column name="Class1">10HSSG_9</column>
+            <column name="Class2">10SCG_9</column>
+            <column name="Class3">10MTG_9</column>
+            <column name="Class4">10ENG_9</column>
+            <column name="Class5">10PE_12</column>
+            <column name="Class6">10HE_12</column>
+            <column name="Class7">10DD_9</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">NULL</column>
+            <column name="Merit">NULL</column>
+            <column name="weeklyMerits">0</column>
+            <column name="totalMerits">0</column>
+            <column name="ObtainedSOTW">0</column>
+            <column name="ObtainedMerit">0</column>
+            <column name="ObtainedExcellence">0</column>
+            <column name="ObtainedOutstanding">0</column>
+        </table>
+        <table name="student">
+            <column name="UserIndex">11</column>
+            <column name="FName">Chantelle</column>
+            <column name="LName">Hoffmann</column>
+            <column name="Year">8</column>
+            <column name="Email">chantelle.hoffmann@education.wa.edu.au10</column>
+            <column name="Class1">10CS_3</column>
+            <column name="Class2">10SCGT_1</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">1,1,1,1,11,</column>
+            <column name="Merit">5,5,3,5,3,</column>
+            <column name="weeklyMerits">21</column>
+            <column name="totalMerits">21</column>
+            <column name="ObtainedSOTW">1</column>
+            <column name="ObtainedMerit">0</column>
+            <column name="ObtainedExcellence">0</column>
+            <column name="ObtainedOutstanding">0</column>
+        </table>
+        <table name="student">
+            <column name="UserIndex">12</column>
+            <column name="FName">Jordan</column>
+            <column name="LName">Hoffmann</column>
+            <column name="Year">9</column>
+            <column name="Email">fjkdghkjgfh</column>
+            <column name="Class1">NULL</column>
+            <column name="Class2">10CS_3</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">1,1,1,1,</column>
+            <column name="Merit">5,5,3,5,</column>
+            <column name="weeklyMerits">18</column>
+            <column name="totalMerits">18</column>
+            <column name="ObtainedSOTW">0</column>
+            <column name="ObtainedMerit">0</column>
+            <column name="ObtainedExcellence">0</column>
+            <column name="ObtainedOutstanding">0</column>
+        </table>
+        <table name="student">
+            <column name="UserIndex">58</column>
+            <column name="FName">Yi Seng</column>
+            <column name="LName">Yap</column>
+            <column name="Year">0</column>
+            <column name="Email">roshan.prashant4@education.wa.edu.au5</column>
+            <column name="Class1">NULL</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">NULL</column>
+            <column name="Merit">NULL</column>
+            <column name="weeklyMerits">0</column>
+            <column name="totalMerits">0</column>
+            <column name="ObtainedSOTW">0</column>
+            <column name="ObtainedMerit">0</column>
+            <column name="ObtainedExcellence">0</column>
+            <column name="ObtainedOutstanding">0</column>
+        </table>
+        <table name="student">
+            <column name="UserIndex">59</column>
+            <column name="FName">Jordan</column>
+            <column name="LName">Hoffmann</column>
+            <column name="Year">0</column>
+            <column name="Email">10</column>
+            <column name="Class1">NULL</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">NULL</column>
+            <column name="Merit">NULL</column>
+            <column name="weeklyMerits">0</column>
+            <column name="totalMerits">0</column>
+            <column name="ObtainedSOTW">0</column>
+            <column name="ObtainedMerit">0</column>
+            <column name="ObtainedExcellence">0</column>
+            <column name="ObtainedOutstanding">0</column>
+        </table>
+        <table name="student">
+            <column name="UserIndex">60</column>
+            <column name="FName">Zachary</column>
+            <column name="LName">Browne</column>
+            <column name="Year">0</column>
+            <column name="Email">7</column>
+            <column name="Class1">NULL</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+            <column name="Class9">NULL</column>
+            <column name="Class10">NULL</column>
+            <column name="Class11">NULL</column>
+            <column name="Class12">NULL</column>
+            <column name="Teacher">11,</column>
+            <column name="Merit">3,</column>
+            <column name="weeklyMerits">3</column>
+            <column name="totalMerits">3</column>
+            <column name="ObtainedSOTW">0</column>
+            <column name="ObtainedMerit">0</column>
+            <column name="ObtainedExcellence">0</column>
+            <column name="ObtainedOutstanding">0</column>
+        </table>
+        <!-- Table teacher -->
+        <table name="teacher">
+            <column name="UserIndex">1</column>
+            <column name="FName">Nigel</column>
+            <column name="LName">Dutton</column>
+            <column name="Title">NULL</column>
+            <column name="Status">7</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">2576</column>
+            <column name="Class1">10CS_1</column>
+            <column name="Class2">10CS_2</column>
+            <column name="Class3">10CS_3</column>
+            <column name="Class4">10CS_4</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">2</column>
+            <column name="FName">Jordan</column>
+            <column name="LName">Hoffmann</column>
+            <column name="Title">NULL</column>
+            <column name="Status">1</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_2</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">3</column>
+            <column name="FName">Frinze</column>
+            <column name="LName">Lapuz</column>
+            <column name="Title">NULL</column>
+            <column name="Status">1</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_3</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">4</column>
+            <column name="FName">Dhirren</column>
+            <column name="LName">Ranjit Rajah</column>
+            <column name="Title">NULL</column>
+            <column name="Status">1</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_4</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">5</column>
+            <column name="FName">Andrew</column>
+            <column name="LName">Lee</column>
+            <column name="Title">NULL</column>
+            <column name="Status">1</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_5</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">6</column>
+            <column name="FName">Bob</column>
+            <column name="LName">Brown</column>
+            <column name="Title">NULL</column>
+            <column name="Status">0</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">57</column>
+            <column name="Class1">10CS_6</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">7</column>
+            <column name="FName">Jane</column>
+            <column name="LName">Jhonson</column>
+            <column name="Title">NULL</column>
+            <column name="Status">0</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_7</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">8</column>
+            <column name="FName">Josh</column>
+            <column name="LName">Shipp</column>
+            <column name="Title">NULL</column>
+            <column name="Status">0</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_8</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">9</column>
+            <column name="FName">Acorn</column>
+            <column name="LName">Wan</column>
+            <column name="Title">NULL</column>
+            <column name="Status">0</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_9</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">10</column>
+            <column name="FName">Andrew</column>
+            <column name="LName">Jin</column>
+            <column name="Title">NULL</column>
+            <column name="Status">0</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_10</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">11</column>
+            <column name="FName">Sergio</column>
+            <column name="LName">Arellano</column>
+            <column name="Title">NULL</column>
+            <column name="Status">8</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">96</column>
+            <column name="Class1">10CS_11</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">12</column>
+            <column name="FName">Alec</column>
+            <column name="LName">Kanganas</column>
+            <column name="Title">NULL</column>
+            <column name="Status">1</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_12</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">13</column>
+            <column name="FName">Claudia</column>
+            <column name="LName">Goh</column>
+            <column name="Title">NULL</column>
+            <column name="Status">0</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_13</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">14</column>
+            <column name="FName">Delwyn</column>
+            <column name="LName">Lee</column>
+            <column name="Title">NULL</column>
+            <column name="Status">0</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_14</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">15</column>
+            <column name="FName">Tai Shan</column>
+            <column name="LName">Ng</column>
+            <column name="Title">NULL</column>
+            <column name="Status">0</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_15</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">16</column>
+            <column name="FName">Leo</column>
+            <column name="LName">Ngu</column>
+            <column name="Title">NULL</column>
+            <column name="Status">0</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_16</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">17</column>
+            <column name="FName">Nikita</column>
+            <column name="LName">Tchakashniv</column>
+            <column name="Title">NULL</column>
+            <column name="Status">0</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">10CS_17</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+        <table name="teacher">
+            <column name="UserIndex">18</column>
+            <column name="FName">Sumira</column>
+            <column name="LName">Wejisuria</column>
+            <column name="Title">NULL</column>
+            <column name="Status">0</column>
+            <column name="Email">nigel.dutton@education.wa.edu.au</column>
+            <column name="mPoints">51</column>
+            <column name="Class1">NULL</column>
+            <column name="Class2">NULL</column>
+            <column name="Class3">NULL</column>
+            <column name="Class4">NULL</column>
+            <column name="Class5">NULL</column>
+            <column name="Class6">NULL</column>
+            <column name="Class7">NULL</column>
+            <column name="Class8">NULL</column>
+        </table>
+    </database>
+</pma_xml_export>
